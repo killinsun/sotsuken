@@ -1,0 +1,99 @@
+/* -------------- ニュース---------------- */
+
+.newsBox {
+  margin: 50px auto;
+  border: 1px #000000 solid;
+  width: 800px;
+}
+
+/* ニュースタイトル */
+  .newsBox {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 14pt;
+    }
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-right: 10px;
+      font-size: 8pt;
+      text-align: right;
+    }
+  }
+.newsBody p {
+	margin: 0;
+}
+#main {
+}
+
+/* ニュースの日付 */
+
+/* ニュース本文 */
+
+/* ニュースヘッダー */
+
+.newsInfo {
+  background-color: #83e6a1;
+  border-bottom: 1px #000000 dotted;
+}
+
+/* ニュースエントリ */
+
+article {
+  margin: 0 auto;
+  float: left;
+  width: 300px;
+  height: 100%;
+  h1 {
+    font-size: 14pt;
+    text-shadow: 1px 1px 3px #777;
+    border-bottom: 1px #000000 solid;
+    border-left: 10px #000000 solid;
+  }
+}
+
+/* ニュースの投稿 */
+
+#base {
+  width: 750px;
+  height: auto;
+  margin: 70px auto;
+}
+
+#submitBar {
+  text-align: right;
+  margin-right: 20px;
+}
+
+div#confirm{
+	display:none;
+	float:left;
+	margin:auto;
+	width:1000px;
+	height:auto;
+	background-image:url("../img/bg07_01.jpg");
+	position: relative;
+	/*初期状態の位置を決める*/
+	left:10%;
+	bottom:100%;
+	border:1px #000000 dashed;
+	box-shadow: 5px 10px 50px #000;
+
+} 
+#backButton {
+  width: 100px;
+  height: 50px;
+  float: right;
+  text-align: center;
+  background-color: #57cd7b;
+  color: #FFFFFF;
+  font-size: 24pt;
+}
+#submitButton{
+	width: 100px;
+	height: 50px;
+	float: right;
+	text-align:center;
+}
+

@@ -1,0 +1,131 @@
+.folder {
+  text-align: center;
+  line-height: 150px;
+  font-size: 25pt;
+  font-weight: bold;
+  font-family: sans-serif;
+  background-image: url(../img/folder.png);
+  background-repeat: no-repeat;
+  background-size: 150px;
+  width: 150px;
+  height: 150px;
+  float: left;
+}
+
+a:link > .folder, a:visited > .folder, a:hover > .folder, a:active .folder {
+  color: #000000;
+}
+
+#wrapper {
+  width: 800px;
+  height: 100%;
+  margin: 40px auto;
+}
+
+section#catchcopyList table, tr, td, th {
+  border: 1px solid #000000;
+}
+
+section#catchcopyList table {
+  margin: 0 auto;
+  width: 1000px;
+  height: auto;
+}
+section#catchcopyList td {
+  text-align: center;
+}
+
+th#tableOfCp {
+  width: 800px;
+  text-align: center;
+}
+
+p#grancp {
+  text-align: center;
+  font-size: 50pt;
+}
+
+/* -------------CM大会------------ */
+.cmbox {
+  width: 800px;
+  margin-bottom: 100px;
+}
+.cmbox h3 {
+  font-size: 10pt;
+  text-shadow: 1px 1px 3px #777;
+  border-bottom: 1px solid #000000;
+}
+
+.vote {
+  float: right;
+  width: 90px;
+  margin: 0 auto;
+}
+
+.cmForm {
+  width: 800px;
+  height: 300px;
+}
+
+#cmMessage {
+  width: 600px;
+  height: 70px;
+}
+
+#uploadSubmit {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  /* webkit */
+  -webkit-border-radius: 7px;
+  /* Mozira */
+  -moz-border-radius: 7px;
+  font-size: 14pt;
+  background: -webkit-gradient(linear, left top, left bottom, from(#86dfa1), to(#57cd7b));
+  background: -moz-linear-gradient(left, left bottom, #86dfa1, #57cd7b);
+}
+#uploadSubmit:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#86dfa1), to(#4eb76d));
+  background: -moz-linear-gradient(left, left bottom, #86dfa1, #4eb76d);
+}
+
+/* エントリ */
+article {
+  margin: 0 auto;
+  float: left;
+  width: 300px;
+  height: 100%;
+}
+article h1 {
+  font-size: 14pt;
+  text-shadow: 1px 1px 3px #777;
+  border-bottom: 1px #000000 solid;
+  border-left: 10px #000000 solid;
+}
+
+#gra {
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+}
+#gra #title {
+  width: 1000px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-image: url("../img/ribbon.png");
+}
+#gra #title p {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  font-size: 40pt;
+}
+#gra img {
+  margin: 0 auto;
+}
+#gra #vote {
+  text-align: right;
+  font-size: 24pt;
+}

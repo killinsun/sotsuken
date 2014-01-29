@@ -1,0 +1,363 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+body div#container {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/*                 */
+/*　ヘッダー部     */
+/*                 */
+header {
+  margin: 0;
+  padding: 0;
+  width: 1200px;
+  height: 114px;
+  background-color: #57cd7b;
+  float: left;
+}
+header div#logoBk {
+  width: 550px;
+  height: 112px;
+  float: left;
+}
+header div#login {
+  text-align: right;
+  width: 650px;
+  height: 530px;
+  float: right;
+}
+header div#login ul {
+  list-style-type: none;
+}
+header div#login li {
+  float: right;
+  list-style: none;
+}
+header div#login input {
+  width: 150px;
+  background-color: #DFFAE7;
+}
+
+/*                 */
+/*　メニューの処理 */
+/*                 */
+nav {
+  float: left;
+}
+nav #menu {
+  margin: 0;
+  padding: 0;
+  width: 1200px;
+  height: 40px;
+  background-color: #86dfa1;
+}
+nav #menu ul {
+  margin: 0 auto;
+  padding: 0px;
+  background-color: #86dfa1;
+  list-style-type: none;
+}
+
+#menu li {
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 40px;
+  list-style: none;
+  text-align: center;
+  color: #060;
+  font-weight: bold;
+  background-color: #86dfa1;
+  line-height: 2;
+  border: solid 1px #efefef;
+}
+
+nav #menu li:hover {
+  background-color: #75A784;
+  position: relative;
+  box-shadow: none;
+  border: solid 1px #efefef;
+  display: block;
+}
+nav #menu li ul {
+  margin: 0 auto;
+  color: #34495e;
+  background-color: #86dfa1;
+  display: none;
+  position: absolute;
+  top: 40px;
+  width: 200px;
+}
+nav #menu li ul li {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  border: solid 1px #efefef;
+}
+nav #menu li a {
+  color: #34495e;
+  display: block;
+  text-decoration: none;
+  line-height: 2;
+  height: 100%;
+}
+nav #menu li a:link, nav #menu li a:visited {
+  color: #34495e;
+}
+nav #menu li a:hover {
+  position: relative;
+  top: 1px;
+  box-shadow: none;
+  display: block;
+}
+
+/*                 */
+/*　メインセクション*/
+/*                 */
+/* --------------  段落落ちするのでdivで囲んでください ---------------- */
+img#bigLogo {
+  float: left;
+}
+
+div#mainLoginForm {
+  width: 300px;
+  height: 100px;
+  margin: 70px auto;
+  text-align: left;
+  float: right;
+}
+div#mainLoginForm p {
+  float: right;
+  text-align: right;
+  font-size: 8pt;
+}
+div#mainLoginForm input {
+  height: 25px;
+  width: 280px;
+  margin-bottom: 10px;
+  background-color: #57cd7b;
+}
+div#mainLoginForm input[type="submit"], div#mainLoginForm input[type="button"] {
+  width: 280px;
+  height: 35px;
+  font-size: 13pt;
+  color: #FFFFFF;
+  background-color: #57cd7b;
+}
+
+section#mainContainer {
+  margin: 0;
+  padding: 0;
+  width: 1200px;
+  background-color: #d3ffc5;
+  float: left;
+}
+
+#mainContainer img {
+  display: block;
+  margin: 20px;
+}
+#mainContainer img#biglogo {
+  float: left;
+}
+
+section#main {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 1200px;
+  float: left;
+}
+
+#main h1 {
+  font-size: 14pt;
+  border-bottom: 1px solid black;
+  border-left: 10px #000000 solid;
+  text-shadow: 1px 1px 3px #777;
+}
+#main h2 {
+  font-size: 12pt;
+  border-bottom: 1px solid black;
+  text-shadow: 1px 1px 3px #777;
+}
+#main p {
+  padding: 10px;
+  font-size: 12pt;
+  line-height: 150%;
+}
+#main p strong {
+  font-size: 12pt;
+}
+
+/* ----------------------------- */
+section#contents {
+  margin: 0;
+  padding: 40px;
+  width: 1200px;
+  height: 600px;
+  background-color: #4CCC73;
+  float: left;
+}
+
+aside {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 600px;
+  background-color: #ff7e00;
+  float: left;
+}
+
+footer {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  width: 1200px;
+  height: 20px;
+  background-color: #57cd7b;
+}
+footer p {
+  padding-right: 20px;
+  text-align: right;
+  font-size: 9pt;
+}
+
+form p {
+  margin: 0 0 -15px 0;
+  padding: 0;
+}
+
+.hover {
+  cursor: pointer;
+  background: #27ae60 !important;
+}
+
+/*--------テーブルの共通フォーマット-------------------*/
+#Table1 {
+  border-collapse: collapse;
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.Table1 {
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-collapse: collapse;
+  height: auto;
+  margin: 0 auto;
+}
+
+table.Table1 {
+  border: 2px #1c853c solid;
+}
+table.Table1 tr, table.Table1 td {
+  border: 2px #1c853c solid;
+}
+table.Table1 th {
+  border: 2px #1c853c solid;
+  background-color: #83e6a1;
+  color: #1c853c;
+}
+
+/* -------------テーブルの列見出し ------------*/
+.midashi {
+  width: 100px;
+}
+
+table.signup input {
+  width: 80%;
+  height: 25px;
+  /* webkit */
+  -webkit-border-radius: 7px;
+  /* Mozira */
+  -moz-border-radius: 7px;
+  font-size: 14pt;
+}
+table.signup select {
+  width: 80%;
+  height: 35px;
+  /* webkit */
+  -webkit-border-radius: 7px;
+  /* Mozira */
+  -moz-border-radius: 7px;
+  font-size: 14pt;
+}
+table.signup input#signupSubmit {
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #57cd7b;
+  background: -webkit-gradient(linear, left top, left bottom, from(#86dfa1), to(#57cd7b));
+  background: -moz-linear-gradient(left, left bottom, #86dfa1, #57cd7b);
+}
+table.signup input#signupSubmit:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#86dfa1), to(#4eb76d));
+  background: -moz-linear-gradient(left, left bottom, #86dfa1, #4eb76d);
+}
+
+/* -------------フォーム部品の共通フォーマット ------------*/
+input {
+  /* webkit */
+  -webkit-border-radius: 7px;
+  /* Mozira */
+  -moz-border-radius: 7px;
+  font-size: 14pt;
+  border-style: none;
+}
+input[type="text"], input[type="password"] {
+  border-style: none;
+  background-color: #57cd7b;
+}
+input[type="number"] {
+  border-style: none;
+  background-color: #57cd7b;
+  text-align: right;
+}
+input[type="submit"], input[type="button"] {
+  font-size: 13pt;
+  color: #FFFFFF;
+  background-color: #57cd7b;
+  background: -webkit-gradient(linear, left top, left bottom, from(#86dfa1), to(#57cd7b));
+  background: -moz-linear-gradient(left, left bottom, #86dfa1, #57cd7b);
+}
+input[type="submit"]:hover, input[type="button"]:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#86dfa1), to(#4eb76d));
+  background: -moz-linear-gradient(left, left bottom, #86dfa1, #4eb76d);
+}
+
+textarea {
+  /* webkit */
+  -webkit-border-radius: 7px;
+  /* Mozira */
+  -moz-border-radius: 7px;
+  font-size: 14pt;
+  border-style: none;
+  background-color: #57cd7b;
+  border-style: none;
+}
+
+select {
+  /* webkit */
+  -webkit-border-radius: 7px;
+  /* Mozira */
+  -moz-border-radius: 7px;
+  font-size: 14pt;
+  border-style: none;
+  background-color: #57cd7b;
+}
+
+.error{
+  color:#FF0000;
+}

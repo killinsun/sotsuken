@@ -1,0 +1,31 @@
+/* メインコンテンツ内の要素 */
+.Table1 th {
+  text-align: right;
+  width: 20%;
+}
+
+/* 団体の追加の場合は、見出しは中央寄せ */
+.addGroupT {
+  height: 130%;
+}
+.addGroupT th {
+  text-align: center;
+  height: 30px;
+}
+.addGroupT td {
+  height: 30px;
+}
+.addGroupT td input {
+  width: 100%;
+}
+
+section#main input[type="submit"] {
+  width: 200px;
+  float: right;
+  margin: 40px;
+}
+
+form#dataForm input[type="submit"] {
+  width: 150px;
+  margin: 0px auto;
+}

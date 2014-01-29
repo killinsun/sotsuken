@@ -1,0 +1,145 @@
+#info {
+  margin: 20px;
+  width: 300px;
+  float: right;
+}
+
+#submissionCheck {
+  width: 1000px;
+}
+
+/* 確認ページのテーブル:書類グループ */
+
+td.documents {
+  text-align: center;
+}
+
+/* 書類の提出のチェックが完了した場合*/
+
+table.Table1 td {
+  &.checked {
+    background-color: #579A6B;
+  }
+  &.noChecked {
+    background-color: #83E6A1;
+  }
+}
+
+/* ------------------企画書----------------- */
+/*テーブル*/
+
+.Table1 th {
+  text-align: right;
+}
+
+.midashi {
+  width: 200px;
+}
+
+/* フォーム部品　*/
+
+#plan {
+  width: 95%;
+}
+
+#rental {
+  width: 300px;
+}
+
+#memberNum {
+  width: 100px;
+}
+
+#place {
+  width: 300px;
+}
+
+#fjbRental {
+  width: 100%;
+}
+
+/* ------------------見積書----------------- */
+
+.Table2 {
+  border-collapse: collapse;
+  width: 1000px;
+  height: auto;
+  margin: 30px auto;
+}
+
+table.Table2 {
+  border: 2px #1c853c solid;
+  tr {
+    border: 2px #1c853c solid;
+  }
+  td {
+    border: 2px #1c853c solid;
+    text-align: right;
+  }
+  th {
+    border: 2px #1c853c solid;
+    background-color: #83e6a1;
+    color: #1c853c;
+  }
+}
+
+.Table3 {
+  border-collapse: collapse;
+  margin-right: 8%;
+  width: 300px;
+  height: auto;
+  float: right;
+}
+
+div#submit {
+  margin-right: 8%;
+  float: right;
+}
+
+/* ------------------損益計算書----------------- */
+
+#groupInfo {
+  margin: 0;
+}
+
+#accountInfo {
+  margin: 20px 0;
+}
+
+#edit-table th {
+  text-align: center;
+}
+
+table, tr, td, th {
+  border: 1px #000000 solid;
+}
+
+#materialBox {
+  width: 1000px;
+  height: auto;
+}
+
+#earningsBox {
+  width: 400px;
+  height: auto;
+  margin: 20px 0;
+  float: left;
+}
+
+#buttonArea {
+  float: right;
+  margin-top: 100px;
+}
+
+.edit-table {
+  tr {
+    height: 20px;
+  }
+  input {
+    width: 100%;
+  }
+}
+
+colgroup.thPlace {
+  width: 100px;
+}

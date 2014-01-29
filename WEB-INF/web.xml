@@ -1,0 +1,261 @@
+<web-app>
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SignupServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.SignupServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SignupServlet</servlet-name>
+		<url-pattern>/SignupServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ConfirmServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.ConfirmServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ConfirmServlet</servlet-name>
+		<url-pattern>/ConfirmServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GroupAddServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.GroupAddServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GroupAddServlet</servlet-name>
+		<url-pattern>/GroupAddServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GroupConfirmServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.GroupConfirmServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GroupConfirmServlet</servlet-name>
+		<url-pattern>/GroupConfirmServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MaintServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.MaintServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MaintServlet</servlet-name>
+		<url-pattern>/MaintServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GroupProfileServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.GroupProfileServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GroupProfileServlet</servlet-name>
+		<url-pattern>/GroupProfileServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>NewsSubmitServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.NewsSubmitServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NewsSubmitServlet</servlet-name>
+		<url-pattern>/NewsSubmitServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>NewsServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.NewsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NewsServlet</servlet-name>
+		<url-pattern>/NewsServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegistServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.RegistServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RegistServlet</servlet-name>
+		<url-pattern>/RegistServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>InventryManagementServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.InventryManagementServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>InventryManagementServlet</servlet-name>
+		<url-pattern>/InventryManagementServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegistViewServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.RegistViewServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RegistViewServlet</servlet-name>
+		<url-pattern>/RegistViewServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AccountingViewServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.AccountingViewServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AccountingViewServlet</servlet-name>
+		<url-pattern>/AccountingViewServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AccountingServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.AccountingServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AccountingServlet</servlet-name>
+		<url-pattern>/AccountingServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AccountingLogServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.AccountingLogServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AccountingLogServlet</servlet-name>
+		<url-pattern>/AccountingLogServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ProductViewServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.ProductViewServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProductViewServlet</servlet-name>
+		<url-pattern>/ProductViewServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ProductServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.ProductServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProductServlet</servlet-name>
+		<url-pattern>/ProductServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AccountingChartServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.AccountingChartServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AccountingChartServlet</servlet-name>
+		<url-pattern>/AccountingChartServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CmUpServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.CmUpServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CmUpServlet</servlet-name>
+		<url-pattern>/CmUpServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CatchcopyServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.CatchcopyServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CatchcopyServlet</servlet-name>
+		<url-pattern>/CatchcopyServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CatchcopyVoteServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.CatchcopyVoteServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CatchcopyVoteServlet</servlet-name>
+		<url-pattern>/CatchcopyVoteServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserProfileServlet</servlet-name>
+		<servlet-class>jp.ac.fjb.safna.servlet.UserProfileServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserProfileServlet</servlet-name>
+		<url-pattern>/UserProfileServlet</url-pattern>
+	</servlet-mapping>
+
+	 <servlet>
+	    <servlet-name>UploadFileServlet</servlet-name>
+	    <servlet-class>jp.ac.fjb.safna.servlet.UploadFileServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>UploadFileServlet</servlet-name>
+	    <url-pattern>/UploadFileServlet</url-pattern>
+	  </servlet-mapping>
+
+	 <servlet>
+	    <servlet-name>CmViewServlet</servlet-name>
+	    <servlet-class>jp.ac.fjb.safna.servlet.CmViewServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>CmViewServlet</servlet-name>
+	    <url-pattern>/CmViewServlet</url-pattern>
+	  </servlet-mapping>
+</web-app>

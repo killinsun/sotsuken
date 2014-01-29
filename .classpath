@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/oracle"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="src" output="work" path="work"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/common"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jackson-core-2.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/jackson-annotations-2.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/jackson-core-2.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/jackson-databind-2.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-fileupload-1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-fileupload-1.3-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-fileupload-1.3-test-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-fileupload-1.3-tests.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-fileupload-1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-io-2.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-io-2.4-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-io-2.4-test-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-io-2.4-tests.jar"/>
+	<classpathentry kind="lib" path="/Users/takeuchiryouta/Documents/workspace/safna/WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>
