@@ -27,7 +27,7 @@ public class RegistServlet  extends HttpServlet{
 
 		UserBean uData = (UserBean)s.getAttribute("LOGIN_USER");
 		String groupId = uData.getGroupId();
-		
+
 		String code = req.getParameter("hiddenCode");
 		String name = req.getParameter("hiddenName");
 		String category = req.getParameter("hiddenCategory");
@@ -59,7 +59,7 @@ public class RegistServlet  extends HttpServlet{
 			kosu = Integer.parseInt(req.getParameter("hiddenKosu"));
 		}
 		String ifFrom = req.getParameter("from");
-		
+
 		AccountingModel acModel = new AccountingModel();
 
 		//商品確認画面から遷移
@@ -76,8 +76,8 @@ public class RegistServlet  extends HttpServlet{
 				System.out.println("商品管理登録の際にエラーが発生しました");
 				s.setAttribute("ERROR", "商品管理テーブルへの登録エラーが発生しました。");
 			}
-			
-		//商品カテゴリ追加から遷移
+
+			//商品カテゴリ追加から遷移
 		}else{
 
 			String categoryName = req.getParameter("inputCategoryName");
@@ -89,7 +89,7 @@ public class RegistServlet  extends HttpServlet{
 				System.out.println("カテゴリの追加時にエラーが発生しました。");
 				s.setAttribute("ERROR", "カテゴリ追加時にエラーが発生しました。");
 			}
-			
+
 			String[] inputData = new String[7];
 			inputData[0] = code;
 			inputData[1] = name;
@@ -98,10 +98,10 @@ public class RegistServlet  extends HttpServlet{
 			inputData[4] = String.valueOf(teika);
 			inputData[5] = String.valueOf(baika);
 			inputData[6] = String.valueOf(kosu);
-			
+
 			System.out.println("registservlet"+inputData[0]);
 			s.setAttribute("INPUT_DATA", inputData);
-			
+
 		}
 		// 【ビューの呼び出し】
 		RequestDispatcher dp = req.getRequestDispatcher(jspName);

@@ -73,26 +73,76 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js\"></script>\n");
       out.write("\t\t<script src=\"/safna/src/jquery-ui-1.10.3.custom.js\"></script>\n");
       out.write("    <script src=\"/safna/src/jquery.validate.js\"></script>\n");
-      out.write("    <script src=\"/safna/src/nav.js\"></script>\n");
-      out.write("    <script src=\"/safna/src/common.js\"></script>\n");
-      out.write("    <script src=\"/safna/src/accounting.js\"></script>\n");
+      out.write("    <script src=\"/safna/src/jquery.validate.japlugin.js\"></script>\n");
       out.write("\t\t<script type=\"text/javascript\">\n");
-      out.write("\t\t\tf =0;\n");
+      out.write("\t\t\tjQuery.validator.addMethod(\n");
+      out.write("\t\t\t\t\"customCheckCode\",\n");
+      out.write("\t\t\t\t\tfunction(value,element){\n");
+      out.write("\t\t\t\t\t\treg = new RegExp(\"^[0-9a-zA-Z]+$\");\n");
+      out.write("\t\t\t\t\t\treturn this.optional(element) || reg.test(value);\n");
+      out.write("\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\"商品コードは「半角英数字(a-z,A-Z,0-9)で入力してください.\"\n");
+      out.write("\t\t\t);\n");
+      out.write("\t\t\tjQuery.validator.addMethod(\n");
+      out.write("\t\t\t\t\"customCheckDigit\",\n");
+      out.write("\t\t\t\t\tfunction(value,element){\n");
+      out.write("\t\t\t\t\t\treg = new RegExp(\"^[0-9]+$\");\n");
+      out.write("\t\t\t\t\t\treturn this.optional(element) || reg.test(value);\n");
+      out.write("\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\"「半角数字(0-9)で入力してください.\"\n");
+      out.write("\t\t\t);\n");
       out.write("\t\t\t$(document).ready(function(){\n");
       out.write("\t\t\t\t$(\"#syouhinform\").validate({\n");
+      out.write("\t\t\t\t\t//エラールール\n");
       out.write("\t\t\t\t\trules:{\n");
       out.write("\t\t\t\t\t\tsCode:{\n");
-      out.write("\t\t\t\t\t\t\trequired:true\n");
+      out.write("\t\t\t\t\t\t\trequired:true,\n");
+      out.write("\t\t\t\t\t\t\tmaxlength:3,\n");
+      out.write("\t\t\t\t\t\t\tcustomCheckCode: true\n");
+      out.write("\t\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\t\tsName:{\n");
+      out.write("\t\t\t\t\t\t\trequired:true,\n");
+      out.write("\t\t\t\t\t\t\tmaxlength:30\n");
+      out.write("\t\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\t\tfGenka:{\n");
+      out.write("\t\t\t\t\t\t\tcustomCheckDigit: true,\n");
+      out.write("\t\t\t\t\t\t\tdigits: true\n");
+      out.write("\t\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\t\tfTeika:{\n");
+      out.write("\t\t\t\t\t\t\tcustomCheckDigit: true,\n");
+      out.write("\t\t\t\t\t\t\tdigits: true\n");
+      out.write("\t\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\t\tfBaika:{\n");
+      out.write("\t\t\t\t\t\t\tcustomCheckDigit: true,\n");
+      out.write("\t\t\t\t\t\t\tdigits: true\n");
       out.write("\t\t\t\t\t\t}\n");
       out.write("\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\t//表示メッセージ\n");
       out.write("\t\t\t\t\tmessages:{\n");
       out.write("\t\t\t\t\t\tsCode:{\n");
-      out.write("\t\t\t\t\t\t\trequired:\"入力してください\"\n");
-      out.write("\t\t\t\t\t\t}\n");
+      out.write("\t\t\t\t\t\t\trequired:\"商品コードが入力されていません\",\n");
+      out.write("\t\t\t\t\t\t\tmaxlength:\"コードは3文字以下です\"\n");
+      out.write("\t\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\t\tsName:{\n");
+      out.write("\t\t\t\t\t\t\trequired:\"名前の入力がされていません\",\n");
+      out.write("\t\t\t\t\t\t\tmaxlength:\"商品名は30文字以下です\"\n");
+      out.write("\t\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\t\tfGenka:{\n");
+      out.write("\t\t\t\t\t\t\trequired:\"半角数字を入力してください\"\n");
+      out.write("\t\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\t\tfTeika:{\n");
+      out.write("\t\t\t\t\t\t\trequired:\"半角数字を入力してください\"\n");
+      out.write("\t\t\t\t\t\t},\n");
+      out.write("\t\t\t\t\t\tfBaika:{\n");
+      out.write("\t\t\t\t\t\t\trequired:\"半角数字を入力してください\"\n");
+      out.write("\t\t\t\t\t\t},\n");
       out.write("\t\t\t\t\t}\n");
       out.write("\t\t\t\t});\n");
       out.write("\t\t\t});\n");
       out.write("\t\t</script>\n");
+      out.write("    <script src=\"/safna/src/nav.js\"></script>\n");
+      out.write("    <script src=\"/safna/src/common.js\"></script>\n");
+      out.write("    <script src=\"/safna/src/accounting.js\"></script>\n");
       out.write("  <style type=\"text/css\">\n");
       out.write("    div#registForm{\n");
       out.write("      margin:0 auto;\n");
@@ -113,14 +163,14 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("      <section id=\"main\">\n");
       out.write("        <h1>商品登録</h1>\n");
       out.write("        <div id=\"registForm\">\n");
-      out.write("          <form name=\"syouhinform\" id=\"syouhinform\" onSubmit=\"if(f==0){return false}\">\n");
+      out.write("          <form name=\"syouhinform\" id=\"syouhinform\">\n");
       out.write("            <table class=\"Table1 registTable\" width=\"600px\">\n");
       out.write("            <tr>\n");
       out.write("              <th>商品コード:</th>\n");
       out.write("              <td>\n");
       out.write("              \t\t");
  if(inputData!=null){
-              			out.print("<input size='30' minlength='1' type='text' id='sCode' name='sCode' autofocus required value='"+ inputData[0] +"'>");
+              			out.print("<input type='text' id='sCode' name='sCode' autofocus required value='"+ inputData[0] +"'>");
               			}else{
 			              out.print("<input size='30' type='text' id='sCode' name='sCode' autofocus required>");
               			}
@@ -161,9 +211,9 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("              <td>\n");
       out.write("           \t\t");
  if(inputData!=null){
-	           			out.print("<input type='number' min='0' max='99999' id='fGenka' value='"+ inputData[3] +"' required>");
+	           			out.print("<input type='number' id='fGenka' value='"+ inputData[3] +"' required>");
            			}else{
-	           			out.print("<input type='number' min='0' max='99999' id='fGenka' value='0' required>");
+	           			out.print("<input type='number' id='fGenka' value='0' required>");
            			}
         			
       out.write("\n");
@@ -175,9 +225,9 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("              <td>\n");
       out.write("           \t\t");
  if(inputData!=null){
-	           			out.print("<input type='number' min='0' max='99999' id='fTeika' value='"+ inputData[4] +"' required>");
+	           			out.print("<input type='number' id='fTeika' value='"+ inputData[4] +"' required>");
            			}else{
-	           			out.print("<input type='number' min='0' max='99999' id='fTeika' value='0' required>");
+	           			out.print("<input type='number' id='fTeika' value='0' required>");
            			}
         			
       out.write("\n");
@@ -187,9 +237,9 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("              <td>\n");
       out.write("           \t\t");
  if(inputData!=null){
-	           			out.print("<input type='number' min='0' max='99999' id='fBaika' value='"+ inputData[5] +"' required>");
+	           			out.print("<input type='number' id='fBaika' value='"+ inputData[5] +"' required>");
            			}else{
-	           			out.print("<input type='number' min='0' max='99999' id='fBaika' value='0' required>");
+	           			out.print("<input type='number' id='fBaika' value='0' required>");
            			}
         			
       out.write("\n");
@@ -200,9 +250,9 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("              <td>\n");
       out.write("           \t\t");
  if(inputData!=null){
-	           			out.print("<input type='number' min='0' max='99999' id='fKosu' value='"+ inputData[6] +"' required>");
+	           			out.print("<input type='number' id='fKosu' value='"+ inputData[6] +"' >");
            			}else{
-	           			out.print("<input type='number' min='0' max='99999' id='fKosu' value='0' required>");
+	           			out.print("<input type='number' id='fKosu' value='0'>");
            			}
         			
       out.write("\n");
@@ -210,7 +260,7 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("              </td>\n");
       out.write("            </tr>\n");
       out.write("            <tr>\n");
-      out.write("              <td colspan=\"2\"><input type=\"submit\" value=\"登録\" onClick=\"f = 1\"></td>\n");
+      out.write("              <td colspan=\"2\"><input type=\"submit\" value=\"登録\"></td>\n");
       out.write("            </tr>\n");
       out.write("            </table>\n");
       out.write("          </form>\n");

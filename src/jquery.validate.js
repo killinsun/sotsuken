@@ -1038,7 +1038,7 @@ $.extend($.validator, {
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/digits
 		digits: function( value, element ) {
-			return this.optional(element) || /^\d+$/.test(value);
+			return this.optional(element) || /^[0-9-]+$/.test(value);
 		},
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/creditcard

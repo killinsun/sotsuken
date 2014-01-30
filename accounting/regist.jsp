@@ -18,26 +18,65 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script src="/safna/src/jquery-ui-1.10.3.custom.js"></script>
     <script src="/safna/src/jquery.validate.js"></script>
-    <script src="/safna/src/nav.js"></script>
-    <script src="/safna/src/common.js"></script>
-    <script src="/safna/src/accounting.js"></script>
+    <script src="/safna/src/jquery.validate.japlugin.js"></script>
 		<script type="text/javascript">
-			f =0;
+			jQuery.validator.addMethod(
+				"customCheckCode",
+					function(value,element){
+						reg = new RegExp("^[0-9a-zA-Z]+$");
+						return this.optional(element) || reg.test(value);
+					},
+				"商品コードは「半角英数字(a-z,A-Z,0-9)で入力してください."
+			);
 			$(document).ready(function(){
 				$("#syouhinform").validate({
+					//エラールール
 					rules:{
 						sCode:{
-							required:true
+							required:true,
+							maxlength:3,
+							customCheckCode: true
+						},
+						sName:{
+							required:true,
+							maxlength:30
+						},
+						fGenka:{
+							digits: true
+						},
+						fTeika:{
+							digits: true
+						},
+						fBaika:{
+							digits: true
 						}
 					},
+					//表示メッセージ
 					messages:{
 						sCode:{
-							required:"入力してください"
-						}
+							required:"商品コードが入力されていません",
+							maxlength:"コードは3文字以下です"
+						},
+						sName:{
+							required:"名前の入力がされていません",
+							maxlength:"商品名は30文字以下です"
+						},
+						fGenka:{
+							required:"半角数字を入力してください"
+						},
+						fTeika:{
+							required:"半角数字を入力してください"
+						},
+						fBaika:{
+							required:"半角数字を入力してください"
+						},
 					}
 				});
 			});
 		</script>
+    <script src="/safna/src/nav.js"></script>
+    <script src="/safna/src/common.js"></script>
+    <script src="/safna/src/accounting.js"></script>
   <style type="text/css">
     div#registForm{
       margin:0 auto;
@@ -56,13 +95,13 @@
       <section id="main">
         <h1>商品登録</h1>
         <div id="registForm">
-          <form name="syouhinform" id="syouhinform" onSubmit="if(f==0){return false}">
+          <form name="syouhinform" id="syouhinform">
             <table class="Table1 registTable" width="600px">
             <tr>
               <th>商品コード:</th>
               <td>
               		<% if(inputData!=null){
-              			out.print("<input size='30' minlength='1' type='text' id='sCode' name='sCode' autofocus required value='"+ inputData[0] +"'>");
+              			out.print("<input type='text' id='sCode' name='sCode' autofocus required value='"+ inputData[0] +"'>");
               			}else{
 			              out.print("<input size='30' type='text' id='sCode' name='sCode' autofocus required>");
               			}
@@ -97,9 +136,9 @@
               <th>原価:</th>
               <td>
            		<% if(inputData!=null){
-	           			out.print("<input type='number' min='0' max='99999' id='fGenka' value='"+ inputData[3] +"' required>");
+	           			out.print("<input type='number' id='fGenka' value='"+ inputData[3] +"' required>");
            			}else{
-	           			out.print("<input type='number' min='0' max='99999' id='fGenka' value='0' required>");
+	           			out.print("<input type='number' id='fGenka' value='0' required>");
            			}
         			%>
 
@@ -109,9 +148,9 @@
               <th>定価:</th>
               <td>
            		<% if(inputData!=null){
-	           			out.print("<input type='number' min='0' max='99999' id='fTeika' value='"+ inputData[4] +"' required>");
+	           			out.print("<input type='number' id='fTeika' value='"+ inputData[4] +"' required>");
            			}else{
-	           			out.print("<input type='number' min='0' max='99999' id='fTeika' value='0' required>");
+	           			out.print("<input type='number' id='fTeika' value='0' required>");
            			}
         			%>
             </tr>
@@ -119,9 +158,9 @@
               <th>売価:</th>
               <td>
            		<% if(inputData!=null){
-	           			out.print("<input type='number' min='0' max='99999' id='fBaika' value='"+ inputData[5] +"' required>");
+	           			out.print("<input type='number' id='fBaika' value='"+ inputData[5] +"' required>");
            			}else{
-	           			out.print("<input type='number' min='0' max='99999' id='fBaika' value='0' required>");
+	           			out.print("<input type='number' id='fBaika' value='0' required>");
            			}
         			%>
         	  </td>
@@ -130,16 +169,16 @@
               <th>準備個数:</th>
               <td>
            		<% if(inputData!=null){
-	           			out.print("<input type='number' min='0' max='99999' id='fKosu' value='"+ inputData[6] +"' required>");
+	           			out.print("<input type='number' id='fKosu' value='"+ inputData[6] +"' >");
            			}else{
-	           			out.print("<input type='number' min='0' max='99999' id='fKosu' value='0' required>");
+	           			out.print("<input type='number' id='fKosu' value='0'>");
            			}
         			%>
 
               </td>
             </tr>
             <tr>
-              <td colspan="2"><input type="submit" value="登録" onClick="f = 1"></td>
+              <td colspan="2"><input type="submit" value="登録"></td>
             </tr>
             </table>
           </form>
