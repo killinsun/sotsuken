@@ -54,7 +54,7 @@
 			%>
 			<div id="mainLoginForm">
 				<form method="POST" action="/safna/LoginServlet">
-					ID<br /> <input type="text" id="fromid" name="fromid" required "><br />
+					ID<br /> <input type="text" id="fromid" name="fromid" required ><br />
 					Password<br /> <input type="password" id="frompass"  name="frompass" required ><br />
 					<input type="hidden" name="from" value="1" required ><br />
 					<p class="error">
