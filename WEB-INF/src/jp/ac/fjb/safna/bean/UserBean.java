@@ -63,7 +63,7 @@ public class UserBean {
 		}else if(permitCode.equals("2")){
 			setPermit("団体責任者");
 		}else if(permitCode.equals("3")){
-			setPermit("一般ユーザ");
+			setPermit("教職員");
 		}else if(permitCode.equals("4")){
 			setPermit("教職員");
 		}

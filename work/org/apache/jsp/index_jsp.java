@@ -77,6 +77,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 				UserBean loginUser = (UserBean) session.getAttribute("LOGIN_USER");
 				if (loginUser != null) {
 					String username = loginUser.getUserName();
+					String groupname = loginUser.getGroupName();
 			
       out.write("\n");
       out.write("\t\t\t<div id=\"mainInfo\">\n");
@@ -88,6 +89,33 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t<p>\n");
       out.write("\t\t\t\t\tsafnaを使って最高の学園祭を創り上げましょう。<br />\n");
       out.write("\t\t\t\t</p>\n");
+      out.write("\t\t\t\t");
+ if(loginUser.getGroupId().equals("")){ 
+      out.write("\n");
+      out.write("\t\t\t\t\t<label class=\"error\" >\n");
+      out.write("\t\t\t\t\t\t団体情報が取得できていないか、<br/>どの団体にも所属していません。<br/>\n");
+      out.write("\t\t\t\t\t\t学園祭委員に報告するか、<br/>システム管理者に問い合わせてください<br/>\n");
+      out.write("\t\t\t\t\t\t有志団体のみ所属の場合は<a href=\"/safna/UserProfileServlet?type=0\">こちら</a>\n");
+      out.write("\t\t\t\t\t</label>\n");
+      out.write("\t\t\t\t");
+ }else{ 
+      out.write("\n");
+      out.write("\t\t\t\t\t\t<table class=\"Table1\" id=\"userDataTable\">\n");
+      out.write("\t\t\t\t\t\t\t<tr>\n");
+      out.write("\t\t\t\t\t\t\t\t<th>名前</th>\n");
+      out.write("\t\t\t\t\t\t\t\t<td>");
+      out.print( username );
+      out.write("</td>\n");
+      out.write("\t\t\t\t\t\t\t</tr>\n");
+      out.write("\t\t\t\t\t\t\t<tr>\n");
+      out.write("\t\t\t\t\t\t\t\t<th>現在ログインしている団体</th>\n");
+      out.write("\t\t\t\t\t\t\t\t<td>");
+      out.print( groupname );
+      out.write("</td>\n");
+      out.write("\t\t\t\t\t\t\t</tr>\n");
+      out.write("\t\t\t\t\t\t</table>\n");
+      out.write("\t\t\t\t");
+ } 
       out.write("\n");
       out.write("\t\t\t</div>\n");
       out.write("\t\t\t");

@@ -147,12 +147,13 @@ td, th {
 
 /*下部(合計、預かり、お釣り)*/
 #tableBottom {
-  height: 30%;
+  height: 20%;
 }
 
 /*一個の商品欄 */
 .common {
-  height: 75px;
+  height: 60px;
+  font-size:20px;
 }
 
 /*合計金額*/

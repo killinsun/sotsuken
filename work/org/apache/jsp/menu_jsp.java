@@ -63,10 +63,12 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t");
 
 		UserBean loginUser = (UserBean)session.getAttribute("LOGIN_USER");
+		String permCode = "4";
 		if(loginUser != null){
 				out.print("<a href='/safna/UserProfileServlet?type=0'>"+loginUser.getUserName() +"</a>さん");
 				out.print("(<a href='/safna/GroupProfileServlet'>" + loginUser.getGroupName() + "</a>でログイン中)");
 				out.print("<a href='javascript:void(0)' onclick='logout(); return false;'>ログアウト</a>");
+				permCode = loginUser.getPermitCode();
 		}else{
 	
       out.write("\r\n");
@@ -85,12 +87,22 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("</header>\n");
       out.write("<nav>\n");
+      out.write("\t");
+ if(loginUser !=null){ 
+      out.write("\n");
       out.write("\t<ul id=\"menu\">\n");
       out.write("\t\t<li><a href=\"/safna/NewsServlet\">ニュース</a>\n");
+      out.write("\t\t\t");
+ if(permCode.equals("1")){ 
+      out.write("\n");
       out.write("\t\t\t<ul>\n");
       out.write("\t\t\t\t<li><a\n");
       out.write("\t\t\t\t\thref=\"/safna/news/newsSubmit.jsp\">投稿</a></li>\n");
-      out.write("\t\t\t</ul></li>\n");
+      out.write("\t\t\t</ul>\n");
+      out.write("\t\t\t");
+ } 
+      out.write("\n");
+      out.write("\t\t</li>\n");
       out.write("\n");
       out.write("\t\t<li>活動\n");
       out.write("\t\t\t<ul>\n");
@@ -115,21 +127,39 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\thref=\"/safna/AccountingLogServlet\">ログ</a></li>\n");
       out.write("\t\t\t\t<li><a\n");
       out.write("\t\t\t\t\thref=\"/safna/AccountingChartServlet\">チャート</a></li>\n");
+      out.write("\t\t\t\t");
+ if(permCode.equals("1") || permCode.equals("3")){ 
+      out.write("\n");
       out.write("\t\t\t\t<li><a\n");
       out.write("\t\t\t\t\thref=\"/safna/accounting/check.jsp\">確認</a></li>\n");
+      out.write("\t\t\t\t");
+ } 
+      out.write("\n");
       out.write("\t\t\t</ul>\n");
       out.write("\t\t</li>\n");
       out.write("\n");
       out.write("\t\t<li>提出\n");
       out.write("\t\t\t<ul>\n");
+      out.write("\t\t\t\t");
+ if(!permCode.equals("4")){ 
+      out.write("\n");
       out.write("\t\t\t\t<li><a\n");
       out.write("\t\t\t\t\thref=\"/safna/submission/plan.jsp\">企画書</a></li>\n");
       out.write("\t\t\t\t<li><a\n");
       out.write("\t\t\t\t\thref=\"/safna/submission/estimate.jsp\">見積書</a></li>\n");
       out.write("\t\t\t\t<li><a\n");
       out.write("\t\t\t\t\thref=\"/safna/submission/income.jsp\">損益計算書</a></li>\n");
+      out.write("\t\t\t\t");
+ } 
+      out.write("\n");
+      out.write("\t\t\t\t");
+ if(permCode.equals("1") || permCode.equals("3")){ 
+      out.write("\n");
       out.write("\t\t\t\t<li><a\n");
       out.write("\t\t\t\t\thref=\"/safna/submission/check.jsp\">確認</a></li>\n");
+      out.write("\t\t\t\t");
+ } 
+      out.write("\n");
       out.write("\t\t\t</ul>\n");
       out.write("\t\t</li>\n");
       out.write("\n");
@@ -147,6 +177,8 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</li>\n");
       out.write("\t</ul>\n");
       out.write("</nav>\n");
+  } 
+      out.write('\n');
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

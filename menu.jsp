@@ -9,10 +9,12 @@
 	</div>
 	<%
 		UserBean loginUser = (UserBean)session.getAttribute("LOGIN_USER");
+		String permCode = "4";
 		if(loginUser != null){
 				out.print("<a href='/safna/UserProfileServlet?type=0'>"+loginUser.getUserName() +"</a>さん");
 				out.print("(<a href='/safna/GroupProfileServlet'>" + loginUser.getGroupName() + "</a>でログイン中)");
 				out.print("<a href='javascript:void(0)' onclick='logout(); return false;'>ログアウト</a>");
+				permCode = loginUser.getPermitCode();
 		}else{
 	%>
 	<!-- float:rightをliに設定しているため、逆順に設定する -->
@@ -28,12 +30,16 @@
 	<% } %>
 </header>
 <nav>
+	<% if(loginUser !=null){ %>
 	<ul id="menu">
 		<li><a href="/safna/NewsServlet">ニュース</a>
+			<% if(permCode.equals("1")){ %>
 			<ul>
 				<li><a
 					href="/safna/news/newsSubmit.jsp">投稿</a></li>
-			</ul></li>
+			</ul>
+			<% } %>
+		</li>
 
 		<li>活動
 			<ul>
@@ -58,21 +64,27 @@
 					href="/safna/AccountingLogServlet">ログ</a></li>
 				<li><a
 					href="/safna/AccountingChartServlet">チャート</a></li>
+				<% if(permCode.equals("1") || permCode.equals("3")){ %>
 				<li><a
 					href="/safna/accounting/check.jsp">確認</a></li>
+				<% } %>
 			</ul>
 		</li>
 
 		<li>提出
 			<ul>
+				<% if(!permCode.equals("4")){ %>
 				<li><a
 					href="/safna/submission/plan.jsp">企画書</a></li>
 				<li><a
 					href="/safna/submission/estimate.jsp">見積書</a></li>
 				<li><a
 					href="/safna/submission/income.jsp">損益計算書</a></li>
+				<% } %>
+				<% if(permCode.equals("1") || permCode.equals("3")){ %>
 				<li><a
 					href="/safna/submission/check.jsp">確認</a></li>
+				<% } %>
 			</ul>
 		</li>
 
@@ -90,3 +102,4 @@
 		</li>
 	</ul>
 </nav>
+<%  } %>

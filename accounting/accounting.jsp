@@ -49,9 +49,14 @@
 			<section id="cart">
 				<h1>カート</h1>
 				<div id="cartList">
-					商品名-小計
-					<ul>
-					</ul>
+					<table class="Table1" width="100%">
+						<tr id="cartMidashi">
+							<th>商品名</th>
+							<th>単価</th>
+							<th>個数</th>
+							<th>小計</th>
+						</tr>
+					</table>
 				</div>
 				<div id="buttonArea" class="target">会計へ</div>
 			</section>
@@ -66,7 +71,7 @@
 			<div id="backButton" class="target">→</div>
 			<div id="accountingTable">
 				<div id="toOverflow">
-					<table id="tableBody">
+					<table id="tableBody" class="Table1">
 						<tr id="midashi">
 							<th>商品名</th>
 							<th>単価</th>
@@ -81,7 +86,7 @@
 						</tr>
 					</table>
 				</div>
-				<table id="tableBottom">
+				<table id="tableBottom" class="Table1">
 					<tr id="amount">
 						<td colspan="3"></td>
 						<td id="amountArea"></td>

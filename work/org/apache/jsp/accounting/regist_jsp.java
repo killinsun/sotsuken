@@ -83,14 +83,6 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t},\n");
       out.write("\t\t\t\t\"商品コードは「半角英数字(a-z,A-Z,0-9)で入力してください.\"\n");
       out.write("\t\t\t);\n");
-      out.write("\t\t\tjQuery.validator.addMethod(\n");
-      out.write("\t\t\t\t\"customCheckDigit\",\n");
-      out.write("\t\t\t\t\tfunction(value,element){\n");
-      out.write("\t\t\t\t\t\treg = new RegExp(\"^[0-9]+$\");\n");
-      out.write("\t\t\t\t\t\treturn this.optional(element) || reg.test(value);\n");
-      out.write("\t\t\t\t\t},\n");
-      out.write("\t\t\t\t\"「半角数字(0-9)で入力してください.\"\n");
-      out.write("\t\t\t);\n");
       out.write("\t\t\t$(document).ready(function(){\n");
       out.write("\t\t\t\t$(\"#syouhinform\").validate({\n");
       out.write("\t\t\t\t\t//エラールール\n");
@@ -105,15 +97,12 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\tmaxlength:30\n");
       out.write("\t\t\t\t\t\t},\n");
       out.write("\t\t\t\t\t\tfGenka:{\n");
-      out.write("\t\t\t\t\t\t\tcustomCheckDigit: true,\n");
       out.write("\t\t\t\t\t\t\tdigits: true\n");
       out.write("\t\t\t\t\t\t},\n");
       out.write("\t\t\t\t\t\tfTeika:{\n");
-      out.write("\t\t\t\t\t\t\tcustomCheckDigit: true,\n");
       out.write("\t\t\t\t\t\t\tdigits: true\n");
       out.write("\t\t\t\t\t\t},\n");
       out.write("\t\t\t\t\t\tfBaika:{\n");
-      out.write("\t\t\t\t\t\t\tcustomCheckDigit: true,\n");
       out.write("\t\t\t\t\t\t\tdigits: true\n");
       out.write("\t\t\t\t\t\t}\n");
       out.write("\t\t\t\t\t},\n");
@@ -273,17 +262,28 @@ public final class regist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("      <article>\n");
       out.write("        <h1>既存の商品</h1>\n");
-      out.write("        <ul>\n");
+      out.write("\t\t\t\t<table class=\"Table1\">\n");
+      out.write("\t\t\t\t\t<tr>\n");
+      out.write("\t\t\t\t\t\t<th>商品名</th>\n");
+      out.write("\t\t\t\t\t\t<th>売価</th>\n");
+      out.write("\t\t\t\t\t\t<th>準備個数</th>\n");
+      out.write("\t\t\t\t\t</tr>\n");
       out.write("          ");
 
           	if(pbList !=null){
 	          	for(ProductBean pb:pbList){
-	          		out.print("<li>"+ pb.getName() + "|¥"+ pb.getGenka()+ "|"+pb.getKosu()+"個</li>");
+								String name = pb.getName();
+								if(name.length() > 10){
+									name = name.substring(0,9) + "...";
+								}
+								out.print("<tr>");
+	          		out.print("<td>"+ name + "</td><td>¥"+ pb.getGenka()+ "</td><td>"+pb.getKosu()+"個</td>");
+								out.print("</tr>");
 	          	}
           	}
           
       out.write("\n");
-      out.write("        </ul>\n");
+      out.write("        </table>\n");
       out.write("      \n");
       out.write("      </article>\n");
       out.write("    </section>\n");

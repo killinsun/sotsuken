@@ -118,9 +118,14 @@ public final class accounting_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<section id=\"cart\">\n");
       out.write("\t\t\t\t<h1>カート</h1>\n");
       out.write("\t\t\t\t<div id=\"cartList\">\n");
-      out.write("\t\t\t\t\t商品名-小計\n");
-      out.write("\t\t\t\t\t<ul>\n");
-      out.write("\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t<table class=\"Table1\" width=\"100%\">\n");
+      out.write("\t\t\t\t\t\t<tr id=\"cartMidashi\">\n");
+      out.write("\t\t\t\t\t\t\t<th>商品名</th>\n");
+      out.write("\t\t\t\t\t\t\t<th>単価</th>\n");
+      out.write("\t\t\t\t\t\t\t<th>個数</th>\n");
+      out.write("\t\t\t\t\t\t\t<th>小計</th>\n");
+      out.write("\t\t\t\t\t\t</tr>\n");
+      out.write("\t\t\t\t\t</table>\n");
       out.write("\t\t\t\t</div>\n");
       out.write("\t\t\t\t<div id=\"buttonArea\" class=\"target\">会計へ</div>\n");
       out.write("\t\t\t</section>\n");
@@ -135,7 +140,7 @@ public final class accounting_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<div id=\"backButton\" class=\"target\">→</div>\n");
       out.write("\t\t\t<div id=\"accountingTable\">\n");
       out.write("\t\t\t\t<div id=\"toOverflow\">\n");
-      out.write("\t\t\t\t\t<table id=\"tableBody\">\n");
+      out.write("\t\t\t\t\t<table id=\"tableBody\" class=\"Table1\">\n");
       out.write("\t\t\t\t\t\t<tr id=\"midashi\">\n");
       out.write("\t\t\t\t\t\t\t<th>商品名</th>\n");
       out.write("\t\t\t\t\t\t\t<th>単価</th>\n");
@@ -150,7 +155,7 @@ public final class accounting_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t</tr>\n");
       out.write("\t\t\t\t\t</table>\n");
       out.write("\t\t\t\t</div>\n");
-      out.write("\t\t\t\t<table id=\"tableBottom\">\n");
+      out.write("\t\t\t\t<table id=\"tableBottom\" class=\"Table1\">\n");
       out.write("\t\t\t\t\t<tr id=\"amount\">\n");
       out.write("\t\t\t\t\t\t<td colspan=\"3\"></td>\n");
       out.write("\t\t\t\t\t\t<td id=\"amountArea\"></td>\n");

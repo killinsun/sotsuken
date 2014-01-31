@@ -290,7 +290,8 @@ public class AccountingModel {
 		LogBean lb;
 		String sql = "select a.商品ID,b.商品名,c.カテゴリ名,b.売価,a.個数,a.日付 " +
 				"from 会計ログ a,商品 b ,商品カテゴリ c " +
-				"where a.商品ID = b.商品ID and b.カテゴリID = c.カテゴリID and 団体ID = '"+groupId+"'";
+				"where a.商品ID = b.商品ID and b.カテゴリID = c.カテゴリID and 団体ID = '"+groupId+"' " +
+				"order by 日付";
 		DBManager dm = new DBManager();
 		dm.openDB();
 		ResultSet rs = dm.selectSQL(sql);

@@ -189,15 +189,26 @@
       %>
       <article>
         <h1>既存の商品</h1>
-        <ul>
+				<table class="Table1">
+					<tr>
+						<th>商品名</th>
+						<th>売価</th>
+						<th>準備個数</th>
+					</tr>
           <%
           	if(pbList !=null){
 	          	for(ProductBean pb:pbList){
-	          		out.print("<li>"+ pb.getName() + "|¥"+ pb.getGenka()+ "|"+pb.getKosu()+"個</li>");
+								String name = pb.getName();
+								if(name.length() > 10){
+									name = name.substring(0,9) + "...";
+								}
+								out.print("<tr>");
+	          		out.print("<td>"+ name + "</td><td>¥"+ pb.getGenka()+ "</td><td>"+pb.getKosu()+"個</td>");
+								out.print("</tr>");
 	          	}
           	}
           %>
-        </ul>
+        </table>
       
       </article>
     </section>

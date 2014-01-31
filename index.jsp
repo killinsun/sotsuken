@@ -21,6 +21,7 @@
 				UserBean loginUser = (UserBean) session.getAttribute("LOGIN_USER");
 				if (loginUser != null) {
 					String username = loginUser.getUserName();
+					String groupname = loginUser.getGroupName();
 			%>
 			<div id="mainInfo">
 				<h1>
@@ -29,7 +30,24 @@
 				<p>
 					safnaを使って最高の学園祭を創り上げましょう。<br />
 				</p>
-
+				<% if(loginUser.getGroupId().equals("")){ %>
+					<label class="error" >
+						団体情報が取得できていないか、<br/>どの団体にも所属していません。<br/>
+						学園祭委員に報告するか、<br/>システム管理者に問い合わせてください<br/>
+						有志団体のみ所属の場合は<a href="/safna/UserProfileServlet?type=0">こちら</a>
+					</label>
+				<% }else{ %>
+						<table class="Table1" id="userDataTable">
+							<tr>
+								<th>名前</th>
+								<td><%= username %></td>
+							</tr>
+							<tr>
+								<th>現在ログインしている団体</th>
+								<td><%= groupname %></td>
+							</tr>
+						</table>
+				<% } %>
 			</div>
 			<%
 				} else {

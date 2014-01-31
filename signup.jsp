@@ -10,6 +10,55 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="src/nav.js"></script>
 <script src="src/signup.js"></script>
+	<script src="/safna/src/jquery.validate.js"></script>
+	<script src="/safna/src/jquery.validate.japlugin.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			jQuery.validator.addMethod(
+				"customCheckCode",
+					function(value,element){
+						reg = new RegExp("^[0-9a-zA-Z]+$");
+						return this.optional(element) || reg.test(value);
+					},
+				"「半角英数字(a-z,A-Z,0-9)で入力してください."
+			);
+			$("#userForm").validate({
+				//エラールール
+				rules:{
+					commonName:{
+						required:true,
+						maxlength:20
+					},
+					departId:{
+						required:true,
+						maxlength:7,
+						customCheckCode: true
+					},
+					password:{
+						required:true,
+						customCheckCode: true,
+						minlength:6,
+						maxlength:20
+					},
+					password2:{
+						required: true,
+						equalTo:"#password",
+						customCheckCode: true
+					}
+				},
+				//表示メッセージ
+				messages:{
+					departId:{
+						required:"IDが入力されていません",
+						maxlength:"IDは7文字までです"
+					},
+					password:{
+						required:"パスワードが入力されていません",
+					}
+				}
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="container">
@@ -17,7 +66,12 @@
 		<section id="mainContainer">
 			<section id="main">
 				<h1>ユーザー登録</h1>
-				<%= s.getAttribute("ERROR") %>
+				<%
+							
+							if(s.getAttribute("ERROR") != null){
+								out.print("<label class='error'>"+s.getAttribute("ERROR") +"</label>");
+							}
+				%>
 				<form  id="userForm" action="/safna/SignupServlet" method="POST" >
 					<table class="Table1 signup" width="600px">
 						<colgroup span="1" class="midashi">
@@ -31,7 +85,7 @@
 						</tr>
 						<tr>
 							<th>パスワード:</th>
-							<td><input type="password" name="password" required>
+							<td><input type="password" name="password" id="password" required>
 						</tr>
 						<tr>
 							<th>（確認):</th>

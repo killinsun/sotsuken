@@ -270,6 +270,14 @@ table.Table1 th {
   color: #1c853c;
 }
 
+table#userDataTable{
+  width:400px;;
+}
+table#userDataTable th{
+  text-align:right;
+  width:100px;
+}
+
 /* -------------テーブルの列見出し ------------*/
 .midashi {
   width: 100px;

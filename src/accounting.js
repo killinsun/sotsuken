@@ -149,13 +149,15 @@ $(document).ready( function(){
 		if(counter==0){
 			counter = Number(counter) + 1;
 			amount = counter * price;
-			$("#cartList ul").after("<li id='cart"+ id + "'>"+ sName + "\\" + amount +"</li>");
+			$("#cartMidashi").after("<tr><td id='cart"+ id + "'>"+ sName + "</td><td>" + price +"</td><td>"+counter+"</td><td>"+amount+"</td></tr>");
 
 			//カートにあった場合
 		}else{
 			counter = Number(counter) + 1;
 			amount = counter * price;
-			$("#cart"+id).text(sName + "\\" + amount);
+      //$("#cart"+id).next().remove();
+      $("#cart"+id).next().next().html(counter); //個数書き換え
+      $("#cart"+id).next().next().next().html(amount);  //小計書き換え
 
 		}
 		$("#"+id).find(".count").text(counter);
@@ -175,32 +177,51 @@ $(document).ready( function(){
 		//減らした結果,0個になったらカートから削除したことにする
 		if(counter > 0){
 			amount = price * counter;
-			$("#cart"+id).text(sName + "\\" + amount);
+      $("#cart"+id).next().next().html(counter); //個数書き換え
+      $("#cart"+id).next().next().next().html(amount); //小計書き換え
 			$("#"+id).find(".count").text(counter);
 		}else{
-			$("#cart"+id).remove();
 			$("#"+id).find(".count").text("0");
+			$("#cart"+id).parent().remove(); //０個になったら<tr>~</tr>ごと削除
 		}
 		data[id][4] = counter;
 	});
 
 	//お預かり金入力処理----------------------------------------
 	$('#luggage').keypress(function( e ){
+  
+    //エンターキー入力されました
 		if(e.which == 13){
-			//エンターキー入力されました
-			var luggage = $("#luggage").val();
-			var fish = luggage - $("#amountArea").text() ;
-			$("#inputAmountLuggage").hide();   
-			$("#amountLuggage").show();
-			$("#amountLuggageArea").text(luggage);
-			$("#fishingArea").text(fish); 
-			$("#backButton").hide();
-			$("#commitButton").show();
-
+      //お金足りてる?
+      if($("#luggage").val() >= $("#amountArea").text()){     
+        checkOk();
+      //足りていない
+      }else{
+        //エラーメッセージもう出てる？（二重エンター防止)
+        if(jQuery('.error').get(0)){
+          //もう修正された？ 
+          if($("#luggage").val() >= $("#amountArea").text()){
+            checkOk();
+          }
+        }else{
+          $("#luggage").after("<label class='error'>足りません</label>");
+        }
+      }
 			return false;
 
 		}
 	});
+  function checkOk(){
+      var luggage = $("#luggage").val();
+      var fish = luggage - $("#amountArea").text() ;
+      $("#inputAmountLuggage").hide();   
+      $("#amountLuggage").show();
+      $("#amountLuggageArea").text(luggage);
+      $("#fishingArea").text(fish); 
+      $("#backButton").hide();
+      $("#commitButton").show();
+  }
+    
 
 	//確定ボタンをクリックした時----------------------------------------
 	$("#commitButton").click(function(){
