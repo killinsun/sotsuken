@@ -25,6 +25,7 @@
 				<li>Password:<input type="password" name="pass" required autofocus tabindex="2"></li>
 				<li>ID:<input type="text" name="id" required autofocus tabindex="1"></li>
 			</ul>
+			<input type="hidden" name="from" value="0">
 		</form>
 	</div>
 	<% } %>

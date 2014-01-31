@@ -80,6 +80,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t<li>Password:<input type=\"password\" name=\"pass\" required autofocus tabindex=\"2\"></li>\n");
       out.write("\t\t\t\t<li>ID:<input type=\"text\" name=\"id\" required autofocus tabindex=\"1\"></li>\n");
       out.write("\t\t\t</ul>\n");
+      out.write("\t\t\t<input type=\"hidden\" name=\"from\" value=\"0\">\n");
       out.write("\t\t</form>\n");
       out.write("\t</div>\n");
       out.write("\t");

@@ -26,9 +26,18 @@ public class LoginServlet extends HttpServlet {
 		HttpSession s = req.getSession();	// セッション
 		String jspName = "";				// 遷移先JSP名
 
-		// IDとパスワードを取得
-		String userId = req.getParameter("id");
-		String password = req.getParameter("pass");
+		String userId;
+		String password;
+		System.out.println(req.getParameter("from"));
+		if(req.getParameter("from").equals("1")){
+			userId = req.getParameter("fromid");
+			password = req.getParameter("frompass");
+
+		}else{
+			// IDとパスワードを取得
+			userId = req.getParameter("id");
+			password = req.getParameter("pass");
+		}
 
 		//入力されたパスワードをIDとのsalt値をとってSHA256化する
 		SafePassword safepass = new SafePassword();

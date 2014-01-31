@@ -124,9 +124,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 			
       out.write("\n");
       out.write("\t\t\t<div id=\"mainLoginForm\">\n");
-      out.write("\t\t\t\t<form method=\"POST\" action=/safna/LoginServlet\">\n");
-      out.write("\t\t\t\t\tID<br /> <input type=\"text\" id=\"id\" required pattern=\"[a-z][A-Z]\"><br />\n");
-      out.write("\t\t\t\t\tPassword<br /> <input type=\"password\" id=\"password\" required pattern=\"[a-z][A-Z]\"><br />\n");
+      out.write("\t\t\t\t<form method=\"POST\" action=\"/safna/LoginServlet\">\n");
+      out.write("\t\t\t\t\tID<br /> <input type=\"text\" id=\"fromid\" name=\"fromid\" required \"><br />\n");
+      out.write("\t\t\t\t\tPassword<br /> <input type=\"password\" id=\"frompass\"  name=\"frompass\" required ><br />\n");
+      out.write("\t\t\t\t\t<input type=\"hidden\" name=\"from\" value=\"1\" required ><br />\n");
       out.write("\t\t\t\t\t<p class=\"error\">\n");
       out.write("\t\t\t\t\t\t");
 
@@ -186,7 +187,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>\n");
-      out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

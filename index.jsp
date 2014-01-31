@@ -53,9 +53,10 @@
 				} else {
 			%>
 			<div id="mainLoginForm">
-				<form method="POST" action=/safna/LoginServlet">
-					ID<br /> <input type="text" id="id" required pattern="[a-z][A-Z]"><br />
-					Password<br /> <input type="password" id="password" required pattern="[a-z][A-Z]"><br />
+				<form method="POST" action="/safna/LoginServlet">
+					ID<br /> <input type="text" id="fromid" name="fromid" required "><br />
+					Password<br /> <input type="password" id="frompass"  name="frompass" required ><br />
+					<input type="hidden" name="from" value="1" required ><br />
 					<p class="error">
 						<%
 							String errormessage = (String) session.getAttribute("ERROR_LOGIN");
@@ -107,4 +108,3 @@
 
 </body>
 </html>
-
